@@ -36,7 +36,7 @@ function App() {
           <h2 classname="num1"> {count} </h2>
           <button onClick={() => setCount(count +1)}> Increment</button>
           <button onClick={() => setCount(count * count)}> square </button>
-          <button onClick={() => setCount(count * count)}> root </button>
+          <button onClick={() => setCount(count / count)}> root </button>
           <button onClick={() => setCount(0)} disabled={count === 0}> reset</button>
         </div>
      );
