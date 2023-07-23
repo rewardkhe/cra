@@ -1,19 +1,30 @@
 import React, { useState } from "react";
+import {Link, Route, Routes} from "react-router-dom"
+import { About } from "./Pages/About";
+import { Home } from "./Pages/Home";
+import { NotFound } from "./Pages/NotFound";
+import { Work } from "./Pages/Work";
 
 
 function App() { 
-  const [count, setCount] = useState(2);
   return(
+    <> 
+    <nav>
+        <ul>
+          <Link to = "/">Home </Link> 
+          <Link to = "/work">Work</Link>
+           <Link to = "/about">About </Link>
+        </ul>
+      </nav>
+    <Routes>
+      <Route path="/" element = {<Home />} />
+      <Route path="/work" element = {<Work />} />
+      <Route path="/about" element = {<About />} />
+      <Route path="*" element ={<NotFound />} />
 
-    <div className="container">
-           
-          <h2 classname="num1"> {count} </h2>
-          <button onClick={() => setCount(count +1)}> Increment</button>
-          <button onClick={() => setCount(count * count)}> square </button>
-          <button onClick={() => setCount(count ** 0.5)}> root </button>
-          <button onClick={() => setCount(0)} disabled={count === 0}> reset</button>
-        </div>
-     );
+    </Routes>
+    </>
+  )
 }
 
 export default App;
