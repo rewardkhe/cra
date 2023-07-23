@@ -1,2 +1,3 @@
-export function Home(){
-    return <p> This is Home🏠 page (under construction🚧)</p>}
+export function Home() {
+  return <h1> Under Construction🚧 </h1>;
+}
